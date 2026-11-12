@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentinel Registry — Token Risk Attestations on NEAR</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.2rem; margin-top: 2rem; }
+  label { display: block; margin: .6rem 0 .2rem; font-weight: 600; }
+  input, select, button { font-size: 1rem; padding: .5rem; width: 100%; box-sizing: border-box; }
+  button { background: #00c08b; color: #fff; border: 0; cursor: pointer; margin-top: .8rem; }
+  button:disabled { background: #999; cursor: default; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: .8rem 1rem; margin: .6rem 0; }
+  .pass { color: #0a7d4f; } .review { color: #b7791f; } .fail { color: #c0392b; }
+  code { background: #f2f2f2; padding: .1rem .3rem; border-radius: 4px; }
+  #status { margin: 1rem 0; font-size: .95rem; }
+</style>
+</head>
+<body>
+<h1>🛡️ Sentinel Registry</h1>
+<p>On-chain token risk attestations on NEAR testnet. Check a token's latest
+attestation before you interact with it — or submit one after running a
+pre-check.</p>
+
+<p>Contract: <code id="contract-id">NOT DEPLOYED YET — set CONTRACT_ID in app.js</code><br>
+Network: <code>testnet</code></p>
+
+<div id="status">Loading…</div>
+<button id="connect-btn">Connect NEAR Wallet</button>
+
+<h2>Check a token</h2>
+<label>Chain
+  <select id="q-chain">
+    <option value="bsc">BSC</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="solana">Solana</option>
+    <option value="near">NEAR</option>
+  </select>
+</label>
+<label>Token address <input id="q-token" placeholder="0x..."></label>
+<button id="check-btn">Check latest attestation</button>
+<div id="result"></div>
+
+<h2>Submit an attestation</h2>
+<p>Requires a connected NEAR testnet wallet. Score 0–100 (higher = safer).</p>
+<label>Chain
+  <select id="s-chain">
+    <option value="bsc">BSC</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="solana">Solana</option>
+    <option value="near">NEAR</option>
+  </select>
+</label>
+<label>Token address <input id="s-token" placeholder="0x..."></label>
+<label>Score (0–100) <input id="s-score" type="number" min="0" max="100" value="50"></label>
+<label>Verdict
+  <select id="s-verdict">
+    <option value="Pass">PASS</option>
+    <option value="Review">REVIEW</option>
+    <option value="Fail">FAIL</option>
+  </select>
+</label>
+<label>Evidence URL (optional) <input id="s-evidence" placeholder="https://..."></label>
+<button id="submit-btn">Submit attestation</button>
+
+<h2>Recent attestations</h2>
+<div id="recent"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/near-api-js@5.1.1/dist/near-api-js.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+[package]
+name = "sentinel-registry"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = "5"
+# near-sdk 5 re-exports borsh, but its derive macros resolve the `borsh`
+# crate via proc_macro_crate, so it must be a direct dependency too.
+# Without this, BorshSerialize/BorshDeserialize derives panic at compile
+# time ("Could not find `borsh` in `dependencies`") and every
+# UnorderedMap/LookupMap use then fails with E0277/E0599.
+borsh = "1"
+
+# near-sdk 5 gates compilation on a valid cfg; enabling "unit-testing" as a
+# dev-dependency lets `cargo test` compile the SDK on the host target.
+[dev-dependencies]
+near-sdk = { version = "5", features = ["unit-testing"] }
+
+[profile.release]
+codegen-units = 1
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true

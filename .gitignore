@@ -1,0 +1,5 @@
+target/
+node_modules/
+.near-credentials/
+*.log
+.DS_Store
