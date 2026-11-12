@@ -1,7 +1,9 @@
 # NEAR Hackathon — Submission Draft
 
-> DRAFT — do not submit yet. Repo, demo post and payout address are still
-> pending (see "Still needed" at the bottom).
+> STATUS 12 Nov 2026 ~14:00 WIB — Repo publik JADI, frontend live JADI,
+> payout `cipo420.tg` terisi. TERTAHAN: postingan demo X belum terbit
+> (login X desktop kena limit; draf siap di X-POST-DRAFT.md) — link
+> postingan X WAJIB untuk form submission di nearhackathon.com.
 
 ## Title
 
@@ -103,11 +105,18 @@ existing token pre-check work, but the contract, tests and frontend are new.
 
 ## Still needed before submitting
 
-1. **Public GitHub repo** — create from this local repo (owner decision).
-2. **Demo post on X** — public post with video/screenshot, tagging
-   @NEARProtocol and #NEARHackathon.
-3. **NEAR mainnet payout address** — the owner's mainnet account id.
-4. Submit repo link + demo post link via the hackathon form/API.
+1. ~~Public GitHub repo~~ — DONE 12 Nov 2026: https://github.com/taufik52/sentinel-registry-near
+2. **Demo post on X** — DRAFT READY (X-POST-DRAFT.md, 256 chars + 2 screenshots);
+   needs posting from Cipoz's phone (@DongCape, session still logged in) or a
+   browser attempt after the desktop login limit clears. Link postingan WAJIB
+   untuk form.
+3. ~~NEAR mainnet payout address~~ — DONE: `cipo420.tg` (perintah Cipoz 13:51 WIB 12 Nov).
+4. Submit repo link + demo post link via the form at https://nearhackathon.com
+   (Final Submission section; fields: project name, description 20–2.000 chars,
+   team lead, email, team size = Solo builder, tracks = AI Security & Defense +
+   Agent Economy, payout address, repo link, X post link). No wallet connection
+   needed. One submission per project, cannot be edited after sending (a
+   "Request changes" page exists for corrections).
 
 (Done 12 Nov 2026: unit tests 7/7, WASM build, testnet deployment +
 live attestation — see TEST-REPORT.md.)
