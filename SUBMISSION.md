@@ -95,11 +95,11 @@ existing token pre-check work, but the contract, tests and frontend are new.
 
 ## Links
 
-- Repository: _(public GitHub repo — to be created)_
+- Repository: https://github.com/taufik52/sentinel-registry-near (public)
 - Demo post on X: _(public post tagging @NEARProtocol and #NEARHackathon — to be published)_
-- Live demo: frontend (static) — point it at `sentinel-registry-2026.testnet` (already set in `frontend/app.js`); needs public hosting (e.g. Netlify) for a shareable URL
+- Live demo: https://sentinel-registry-near.netlify.app (frontend static, points at `sentinel-registry-2026.testnet`; deployed 12 Nov 2026)
 - Contract (testnet): `sentinel-registry-2026.testnet` — https://testnet.nearblocks.io/accounts/sentinel-registry-2026.testnet
-- NEAR mainnet payout address: _(to be provided)_
+- NEAR mainnet payout address: `cipo420.tg`
 
 ## Still needed before submitting
 
